@@ -1,0 +1,140 @@
+.menu{
+    position: relative;
+    background-color: #ececec;
+    border-radius: 45px 45px 0px 0px;
+    margin-top: -50px;
+    padding-bottom: 50px;
+    height: auto;
+    padding-left: 20px;
+    
+    &__entree{
+        display: flex;
+        flex-wrap: wrap;
+
+        
+
+    }
+   
+
+    &__title{
+        font-family: 'Shrikhand', cursive;
+        font-weight: lighter;
+       
+       
+    }
+
+    &__line{
+        border-bottom:  solid 5px $minth;
+        width: 50px;
+        padding-top: 20px;
+        
+        &--text{
+            text-transform: uppercase;
+            font-weight: normal;
+            font-size: 15px;
+        }
+    }
+    &__bloc{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        background: $white;
+        height: 70px;
+        max-width: 400px;
+        width: 100%;
+        margin-right: 20px;
+        margin-top: 15px;
+        overflow: hidden;
+        @include border;
+        @include box-shadow;
+
+        animation: appear 2s ease-in backwards;
+
+        &:hover > .menu__bloc--effect{
+            transform: translateX(0px);
+            cursor: pointer;
+        }  
+
+        &:hover > .menu__prix{
+            transform: translateX(-65px);
+       }
+
+        &--detail{
+            line-height: 5px;
+            padding-left: 10px;
+        }
+
+        &--effect{
+            position: absolute;
+            background-color: $minth;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 65px;
+            border-radius: 0px 20px 20px 0px;
+            transform-origin: right 50%;
+            transform: translateX(65px);
+            transition-duration: 1s;
+         
+        }
+
+        &--icone{
+            position: absolute;
+            left: 17px;
+            top: 22px;
+            font-size: 30px;
+            color: $white;
+            opacity: 1;
+        }
+    
+    }
+   
+    &__prix{
+        display: flex;
+        align-items: flex-end;
+        font-weight: bold;
+        width: 50px;
+        transition-duration: 1s;
+    
+    }
+    
+}
+
+.bloc-detail__title{
+    font-size: 18px;
+}
+.bloc-detail__text{
+    font-size: 15px;
+   
+}
+
+@keyframes appear{
+    0%{
+        
+        opacity: 0;
+    }
+    50%{
+        
+        opacity: 1;
+    }
+    100%{
+       
+        opacity: 1;
+        
+    }
+}
+.delay1{
+    animation-delay: 0.1s;
+}
+
+.delay2{
+    animation-delay: 0.3s;
+}
+
+.delay3{
+    animation-delay: 0.6s;
+}
+
+.delay4{
+    animation-delay: 0.9s;
+}
