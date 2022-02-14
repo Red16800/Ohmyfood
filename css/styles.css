@@ -146,19 +146,20 @@ a {
 
 .bloc {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  flex-direction: row;
+  /* justify-content: space-around;
+   align-items: flex-start;
+   flex-wrap: wrap;
+   flex-direction: row;*/
 }
 .bloc__card {
   position: relative;
   width: 350px;
   height: 250px;
   background: #f6f6f6;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   border-radius: 20px;
   box-shadow: 0px 8px 7px 1px #9F9F9F;
+  margin-right: 25px;
 }
 .bloc__card img {
   width: 100%;
@@ -190,6 +191,41 @@ a {
   font-weight: bolder;
 }
 
+@media screen and (max-width: 1400px) {
+  .bloc__card {
+    margin-right: 25px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .bloc {
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .menu__entree {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 400px) {
+  .bloc-detail__title {
+    font-size: 15px;
+    margin: 2px 0 0 10px;
+  }
+
+  .bloc-detail__text {
+    font-size: 13px;
+  }
+
+  .menu__entree {
+    flex-wrap: wrap;
+  }
+
+  .bloc {
+    padding-left: 20px;
+  }
+}
 .bloc-footer {
   background-color: #353535;
   padding: 10px 20px;
@@ -313,7 +349,6 @@ a {
 }
 .menu__entree {
   display: flex;
-  flex-wrap: wrap;
 }
 .menu__title {
   font-family: "Shrikhand", cursive;
@@ -321,13 +356,14 @@ a {
 }
 .menu__line {
   border-bottom: solid 5px #99E2D0;
-  width: 50px;
-  padding-top: 20px;
+  width: 30px;
+  padding-top: 15px;
 }
 .menu__line--text {
   text-transform: uppercase;
   font-weight: normal;
   font-size: 15px;
+  margin-bottom: 4px;
 }
 .menu__bloc {
   display: flex;
@@ -351,9 +387,15 @@ a {
 .menu__bloc:hover > .menu__prix {
   transform: translateX(-65px);
 }
+.menu__bloc:hover .menu__bloc--icone {
+  transform: rotate(0);
+}
 .menu__bloc--detail {
-  line-height: 5px;
-  padding-left: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu__bloc--effect {
   position: absolute;
@@ -374,97 +416,31 @@ a {
   font-size: 30px;
   color: #ffffff;
   opacity: 1;
+  transform: rotate(360deg);
+  transition-duration: 1s;
 }
 .menu__prix {
   display: flex;
   align-items: flex-end;
   font-weight: bold;
+  margin: 0;
   width: 50px;
   transition-duration: 1s;
 }
 
 .bloc-detail__title {
-  font-size: 18px;
+  font-size: 16px;
+  padding: 0;
+  margin: 2px 0 0 10px;
 }
 
 .bloc-detail__text {
   font-size: 15px;
+  padding: 0;
+  margin: 5px 0 0 10px;
 }
 
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.delay1 {
-  animation-delay: 0.1s;
-}
-
-.delay2 {
-  animation-delay: 0.3s;
-}
-
-.delay3 {
-  animation-delay: 0.6s;
-}
-
-.delay4 {
-  animation-delay: 0.9s;
-}
-
-/*.test{
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background-color: #f3f3f3;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-   animation: spin 10s forwards ; 
-
-}
-.chargement{
-    border: 10px solid #f3f3f3;
-    border-top: 10px solid $pink;
-    border-bottom: 10px solid $purple;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    opacity: 0;
-    z-index: 1;
-
-    margin: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    animation: spin 10s linear ; 
-
-}
-@keyframes spin{
-    0%{
-        transform: rotate(0deg);
-        opacity: 1;
-    }
-    100%{
-        transform: rotate(360deg);
-        opacity: 0;
-    }
-
-}
-*/
-.test {
+.loader {
   background-color: #ffffff;
   display: flex;
   justify-content: center;
@@ -479,9 +455,7 @@ a {
   z-index: 1;
   animation: load 2s forwards;
 }
-
-.chargement {
-  border: 10px solid #f3f3f3;
+.loader__anim {
   border-top: 10px solid #FF79DA;
   border-bottom: 10px solid #9356DC;
   border-left: 10px solid #99E2D0;
@@ -497,7 +471,7 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  animation: loading 2s, color 2s;
+  animation: loading 2s;
 }
 
 /*@keyframes color{
@@ -534,12 +508,38 @@ a {
     opacity: 0.9;
   }
   99% {
-    opacity: 0.9;
+    transform: scale(1);
   }
   100% {
     transform: scale(0);
     opacity: 0;
   }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.delay1 {
+  animation-delay: 0.1s;
+}
+
+.delay2 {
+  animation-delay: 0.3s;
+}
+
+.delay3 {
+  animation-delay: 0.6s;
+}
+
+.delay4 {
+  animation-delay: 0.9s;
 }
 
 /*# sourceMappingURL=styles.css.map */
