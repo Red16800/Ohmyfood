@@ -1,11 +1,6 @@
 .bloc{
     display: flex;
-   /* justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    flex-direction: row;*/
-
-
+  
     &__card{
         position: relative;
         width: 350px;
@@ -68,24 +63,3 @@
     } 
 }
 
-@media screen and (max-width: 400px){
- 
-    .bloc-detail__title{
-        font-size: 15px;
-        margin: 2px 0 0 10px;
-    
-    }
-    .bloc-detail__text{
-        font-size: 13px;
-       
-        
-    }
-    .menu__entree{
-        flex-wrap: wrap;
-        
-    }
-
-   .bloc{
-       padding-left: 20px;
-   } 
-}

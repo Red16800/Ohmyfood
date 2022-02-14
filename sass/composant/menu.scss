@@ -48,9 +48,10 @@
 
         &:hover > .menu__prix{
             transform: translateX(-65px);
+            padding-left: 65px;
        }
        &:hover .menu__bloc--icone {
-        transform: rotate(0);
+            transform: rotate(0);
     }
        
 
@@ -60,6 +61,7 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            width: 310px;
 
         }
 
@@ -94,7 +96,6 @@
         display: flex;
         align-items: flex-end;
         font-weight: bold;
-        margin: 0;
         width: 50px;
         transition-duration: 1s;
     
@@ -105,11 +106,36 @@
 .bloc-detail__title{
     font-size: 16px;
     padding: 0;
-    margin: 2px 0 0 10px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
 
 }
 .bloc-detail__text{
     font-size: 15px;
     padding: 0;
-    margin: 5px 0 0 10px;   
+    margin: 0;
+    margin-top: 9px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+     
+}
+
+@media screen and (max-width: 400px){
+    .menu__entree{
+        flex-wrap: wrap;
+    }
+
+   .bloc{
+       padding-left: 20px;
+   }
+   .bloc-detail__title{
+        font-size: 15px;
+}
+    .bloc-detail__text{
+        font-size: 13px;
+        
+} 
+
 }
