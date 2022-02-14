@@ -1,18 +1,20 @@
 .bloc{
     display: flex;
-    justify-content: space-around;
+   /* justify-content: space-around;
     align-items: flex-start;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: row;*/
+
 
     &__card{
         position: relative;
         width: 350px;
         height: 250px;
         background: #f6f6f6;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         @include border;
         @include box-shadow;
+        margin-right: 25px;
     
         img{
             width: 100%;
@@ -48,4 +50,40 @@
         font-weight: bolder;
     }
 
+}
+@media screen and (max-width: 1400px){
+    .bloc__card{
+        margin-right: 25px;
+    }    
+}
+@media screen and (max-width: 1200px){
+    .bloc{
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .menu__entree{ 
+        flex-wrap: wrap; 
+    } 
+}
+
+@media screen and (max-width: 400px){
+ 
+    .bloc-detail__title{
+        font-size: 15px;
+    
+    }
+    .bloc-detail__text{
+        font-size: 13px;
+        
+    }
+    .menu__entree{
+        flex-wrap: wrap;
+        
+    }
+
+   .bloc{
+       padding-left: 20px;
+   } 
 }
