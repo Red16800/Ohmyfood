@@ -76,6 +76,11 @@ a {
   padding: 15px;
 }
 
+.main {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 .header-buton {
   display: block;
   width: 220px;
